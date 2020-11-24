@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.tikru</groupId>
 	<artifactId>tikru-base</artifactId>
-	<version>1</version>
+	<version>${tikru-base.revision}</version>
 	<packaging>pom</packaging>
 	<name>Tikru (Base POM)</name>
 	<description>Base project defining properties and dependencies for all other</description>
@@ -25,6 +25,8 @@
 		<javac.target.version>11</javac.target.version>
 		<!-- Don't compile/generate test resources as default. Will be enabled on project level, if needed. -->
 		<maven.test.skip>true</maven.test.skip>
+		<!-- Own versions -->
+		<tikru-base.revision>2</tikru-base.revision>
 		<!-- JEE 7 -->
 		<servlet-api.version>3.1.0</servlet-api.version>
 		<servlet.jsp.version>2.3.1</servlet.jsp.version>
@@ -39,6 +41,8 @@
 		<hibernate.version>5.4.10.Final</hibernate.version>
 		<hibernate-validator.version>6.0.18.Final</hibernate-validator.version>
 		<!-- Miscelanious -->
+		<logback.version>1.2.3</logback.version>
+		<slf4j.version>1.7.25</slf4j.version><!-- compatible with logback.1.2.3 -->
 		<jackson-databind.version>2.9.7</jackson-databind.version>
 		<junit.version>4.12</junit.version>
 	</properties>
@@ -125,15 +129,16 @@
 				<artifactId>commons-collections4</artifactId>
 				<version>4.0</version>
 			</dependency>
+			<!-- Logging -->
 			<dependency>
-				<groupId>org.apache.logging.log4j</groupId>
-				<artifactId>log4j-core</artifactId>
-				<version>2.8.2</version>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logback.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.apache.logging.log4j</groupId>
-				<artifactId>log4j-web</artifactId>
-				<version>2.8.2</version>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
 			</dependency>
 			<!-- RedHat Hibernate -->
 			<dependency>
