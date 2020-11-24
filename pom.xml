@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.tikru</groupId>
 	<artifactId>tikru-base</artifactId>
-	<version>1</version>
+	<version>${tikru-base.revision}</version>
 	<packaging>pom</packaging>
 	<name>Tikru (Base POM)</name>
 	<description>Base project defining properties and dependencies for all other</description>
@@ -25,6 +25,8 @@
 		<javac.target.version>11</javac.target.version>
 		<!-- Don't compile/generate test resources as default. Will be enabled on project level, if needed. -->
 		<maven.test.skip>true</maven.test.skip>
+		<!-- Own versions -->
+		<tikru-base.revision>2</tikru-base.revision>
 		<!-- JEE 7 -->
 		<servlet-api.version>3.1.0</servlet-api.version>
 		<servlet.jsp.version>2.3.1</servlet.jsp.version>
