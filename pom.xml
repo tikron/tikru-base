@@ -4,13 +4,15 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.tikru</groupId>
 	<artifactId>tikru-base</artifactId>
-	<version>2</version>
+	<version>3</version>
 	<packaging>pom</packaging>
 	<name>Tikru (Base POM)</name>
 	<description>Base project defining properties and dependencies for all other</description>
 	<modules>
 		<module>../tikru-commons/tikru-commons-parent</module>
-		<module>../tikru-tools/tikru-tools</module>
+		<module>../livewatch</module>
+		<module>../memshow</module>
+		<module>../polly</module>
 		<module>../ibase/ibase-parent</module>
 		<module>../tk/tk-webapp</module>
 		<module>../tikron/tikron-parent</module>
