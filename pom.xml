@@ -4,7 +4,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.tikru</groupId>
 	<artifactId>tikru-base</artifactId>
-	<version>3</version>
 	<packaging>pom</packaging>
 	<name>Tikru (Base POM)</name>
 	<description>Base project defining properties and dependencies for all other</description>
@@ -265,4 +264,5 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	<version>4</version>
 </project>
