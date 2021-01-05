@@ -4,7 +4,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.tikru</groupId>
 	<artifactId>tikru-base</artifactId>
-	<version>3</version>
 	<packaging>pom</packaging>
 	<name>Tikru (Base POM)</name>
 	<description>Base project defining properties and dependencies for all other</description>
@@ -33,7 +32,6 @@
 		<mail.version>1.6.2</mail.version>
 		<jsf.version>2.2.14</jsf.version>
 		<jstl.version>1.2.2</jstl.version>
-		<jaxb.version>2.3.2</jaxb.version>
 		<!-- Spring Framework -->
 		<springframework.version>5.2.2.RELEASE</springframework.version>
 		<springframework.security.version>5.2.1.RELEASE</springframework.security.version>
@@ -43,8 +41,8 @@
 		<!-- Miscelanious -->
 		<logback.version>1.2.3</logback.version>
 		<slf4j.version>1.7.25</slf4j.version><!-- compatible with logback.1.2.3 -->
-		<jackson-databind.version>2.9.7</jackson-databind.version>
-		<junit.version>4.12</junit.version>
+		<jackson.version>2.11.4</jackson.version>
+		<jakarta.xml.version>2.3.3</jakarta.xml.version>
 	</properties>
 	<build>
 		<pluginManagement>
@@ -125,24 +123,11 @@
 				<version>${servlet-api.version}</version>
 				<scope>provided</scope>
 			</dependency>
-			<!-- BEGIN: JEP 320: Remove the Java EE and CORBA Modules -->
-			<!-- https://stackoverflow.com/questions/48204141/replacements-for-deprecated-jpms-modules-with-java-ee-apis/48204154#48204154 -->
-			<dependency>
-				<groupId>jakarta.xml.bind</groupId>
-				<artifactId>jakarta.xml.bind-api</artifactId>
-				<version>${jaxb.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.glassfish.jaxb</groupId>
-				<artifactId>jaxb-runtime</artifactId>
-				<version>${jaxb.version}</version>
-			</dependency>
 			<dependency>
 				<groupId>javax.annotation</groupId>
 				<artifactId>javax.annotation-api</artifactId>
 				<version>1.3.1</version>
 			</dependency>
-			<!-- END -->
 			<!-- Apache Commons -->
 			<dependency>
 				<groupId>org.apache.commons</groupId>
@@ -250,15 +235,34 @@
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-databind</artifactId>
-				<version>${jackson-databind.version}</version>
+				<version>${jackson.version}</version>
 			</dependency>
-			<!-- Miscelanious APIs -->
+			<!-- Jakarta XML -->
+			<dependency>
+	            <groupId>jakarta.xml.bind</groupId>
+	            <artifactId>jakarta.xml.bind-api</artifactId>
+	            <version>${jakarta.xml.version}</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>com.sun.xml.bind</groupId>
+	            <artifactId>jaxb-impl</artifactId>
+	            <version>${jakarta.xml.version}</version>
+	            <scope>runtime</scope>
+	        </dependency>
+	        <!-- Unit tests -->
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
-				<version>${junit.version}</version>
+				<version>4.12</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.hamcrest</groupId>
+				<artifactId>hamcrest-library</artifactId>
+				<version>1.3</version>
 				<scope>test</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	<version>4</version>
 </project>
