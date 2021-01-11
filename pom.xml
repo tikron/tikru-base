@@ -232,11 +232,12 @@
 				<artifactId>spring-webmvc</artifactId>
 				<version>${springframework.version}</version>
 			</dependency>
-			<dependency>
-				<groupId>com.fasterxml.jackson.core</groupId>
-				<artifactId>jackson-databind</artifactId>
-				<version>${jackson.version}</version>
-			</dependency>
+<!-- removed to avoid conflict with old geoip2 and antisamy -->
+<!-- 			<dependency> -->
+<!-- 				<groupId>com.fasterxml.jackson.core</groupId> -->
+<!-- 				<artifactId>jackson-databind</artifactId> -->
+<!-- 				<version>${jackson.version}</version> -->
+<!-- 			</dependency> -->
 			<!-- Jakarta XML -->
 			<dependency>
 	            <groupId>jakarta.xml.bind</groupId>
